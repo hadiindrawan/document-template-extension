@@ -1,0 +1,26 @@
+{
+    "name": "Document Template DOT",
+    "description": "Wilujeng, semoga bermanfaat",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "icons": {
+        "128": "dot.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "dot.png"
+        }
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }],
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 10px;
+            text-align: center;
+        }
+        .title, .option, .button, .footer {
+            padding: 10px;
+        }
+        select {
+            cursor: pointer;
+        }
+        button {
+            cursor: pointer;
+            padding: 5px 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h4>Document template</h4>
+    </div>
+    <div class="option">
+        <select id="platform">
+            <option value="jira_atlassian">Jira Atlassian</option>
+            <option value="gitlab">Gitlab</option>
+            <option value="gitHub">GitHub</option>
+        </select>
+    </div>
+    <div class="button">
+        <button id="card">Card description</button>
+        <button id="bug">Bug reporting</button>
+    </div>
+    <div class="footer">
+        <p>Dibuat oleh <b>QA</b> dong</p>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+</body>
+</html>

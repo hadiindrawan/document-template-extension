@@ -1,16 +1,25 @@
-import bugTemplate from '../template/bug-report.js'
-import cardTemplate from '../template/card-desc.js'
+import bugTemplate from '../template/gitlab/bug-report.js'
+import cardTemplate from '../template/gitlab/card-desc.js'
 
 const bugBtn = document.getElementById("bug")
 const cardBtn = document.getElementById("card")
 const optPlatform = document.getElementById('platform')
-
-optPlatform.addEventListener("change", (el) => {
-    console.log(optPlatform.value);
-})
+const errMsg = document.getElementById('error')
+const successMsg = document.getElementById('success')
 
 chrome.runtime.onMessage.addListener((message, sender, sendReponse) => {
     sendReponse('Oke')
+
+    if (message) {
+        errMsg.style.display = 'none'
+        bugBtn.removeAttribute('disabled')
+        cardBtn.removeAttribute('disabled')
+    }
+
+    optPlatform.addEventListener("change", (el) => {
+        let plt = optPlatform.value
+        console.log(plt);
+    })
     bugBtn.addEventListener('click', async (el) => {
         let queryOptions = { active: true, currentWindow: true };
         let tab = await chrome.tabs.query(queryOptions);
@@ -21,6 +30,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendReponse) => {
                 console.log(res);
             }
         )
+        successMsg.style.display = 'block'
     })
 
     cardBtn.addEventListener('click', async (el) => {
@@ -34,5 +44,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendReponse) => {
                 console.log(res);
             }
         )
+        successMsg.style.display = 'block'
     })
 })

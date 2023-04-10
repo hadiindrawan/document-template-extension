@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 10px;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+.title,
+.option,
+.button,
+.footer {
+    padding: 10px;
+}
+
+.option {
+    padding-bottom: 0;
+}
+
+select {
+    cursor: pointer;
+    margin: 10px;
+    border: none;
+    font-weight: 400;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 40px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #fbfbfb;
+}
+
+.error p {
+    color: red;
+}
+.success {
+    display: none;
+}
+.success p {
+    color: rgb(13, 183, 13);
+}
+
+select:hover {
+    background-color: #f3f3f3;
+}
+
+option {
+    border-radius: none;
+}
+
+.buttons {
+    text-align: center;
+    padding: 5px 20px;
+}
+
+.btn-hover:disabled {
+    background-color: #29323c !important;
+    cursor: auto;
+}
+
+.btn-hover {
+    cursor: pointer;
+    width: 180px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    font-family: 'Roboto Slab', serif;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-8 {
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}

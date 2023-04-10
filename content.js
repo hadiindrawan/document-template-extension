@@ -1,17 +1,13 @@
-window.addEventListener('blur', () => {
-    if (document.activeElement.hasAttribute('id') || !document.activeElement.hasAttribute('name'))
-        chrome.runtime.sendMessage({id: document.activeElement.id}, (res) => {})
-    else if (!document.activeElement.hasAttribute('id') || document.activeElement.hasAttribute('name'))
-        chrome.runtime.sendMessage({name: document.activeElement.name}, (res) => {})
-    else if (document.activeElement.hasAttribute('id') && document.activeElement.hasAttribute('name'))
-        chrome.runtime.sendMessage({id: document.activeElement.id}, (res) => {})
+window.addEventListener('blur', () => {    
+    const activeElement = document.activeElement;
+    if (activeElement) {
+        let textarea = document.getElementById(activeElement.id)
+        chrome.runtime.sendMessage({ id: activeElement.id, cursor: textarea.selectionStart } , (res) => { });
+    }
 })
 
 chrome.runtime.onMessage.addListener((message, sender, sendReponse) => {
     sendReponse('executed')
-    if(Object.keys(message.el) == 'id')
-        document.getElementById(message.el.id).value = message.message
-    else 
-        document.getElementsByName(message.el.name).value = message.message
-
+    let textarea = document.getElementById(message.el.id)
+    textarea.value += message.message
 })

@@ -5,47 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            padding: 10px;
-            text-align: center;
-        }
-        .title, .option, .button, .footer {
-            padding: 10px;
-        }
-        select {
-            cursor: pointer;
-        }
-        button {
-            cursor: pointer;
-            padding: 5px 30px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="title">
-        <h4>Document template</h4>
+        <h2>Document template</h2>
     </div>
     <div class="option">
+        <label for="platform">Select platform</label>
         <select id="platform">
-            <option value="jira_atlassian">Jira Atlassian</option>
-            <option value="gitlab">Gitlab</option>
-            <option value="gitHub">GitHub</option>
+            <option value="gitlab" selected>Gitlab</option>
+            <option value="jira">Jira Atlassian</option>
         </select>
     </div>
-    <div class="button">
-        <button id="card">Card description</button>
-        <button id="bug">Bug reporting</button>
+    <div class="error" id="error">
+        <p>Please click your input area to be fill the template first!</p>
+    </div>
+    <div class="success" id="success">
+        <p>Pasted! Please click input area and press <b>SPACE</b> to make editable</p>
+    </div>
+    <div class="buttons">
+        <button class="btn-hover color-8" id="card" disabled>Card description</button>
+        <button class="btn-hover color-8" id="bug" disabled>Bug reporting</button>
     </div>
     <div class="footer">
         <p>Dibuat oleh <b>QA</b> dong</p>
     </div>
-
     <script type="module" src="popup.js"></script>
 </body>
 </html>
